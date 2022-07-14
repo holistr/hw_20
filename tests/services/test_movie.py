@@ -12,7 +12,7 @@ class TestMovieService:
         movie = self.movie_service.get_one(1)
         assert movie is not None
         assert isinstance(movie.id, int)
-        assert movie.name == 'Movie_1'
+        assert movie.title == 'Movie_1'
 
     def test_get_all(self):
         movies = self.movie_service.get_all()
@@ -22,7 +22,7 @@ class TestMovieService:
         movie_d = {'name': "New name"}
         new_movie = self.movie_service.create(movie_d)
         assert new_movie.id is not None
-        assert new_movie.name == "Movie_3"
+        assert new_movie.title == "Movie_3"
         assert new_movie.genre_id == 1
 
     def test_update(self):
